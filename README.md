@@ -1,6 +1,6 @@
 # kdeps
 
-A small CLI to download Maven dependencies from a file.
+A small zero dependency CLI to download Maven dependencies from a file.
 
 This project also serves as an example for using `jdeps`, `jlink`, and `jpackage` to create a custom runtime image and
 package it as a platform-specific installer.
