@@ -14,10 +14,9 @@ JAVA_VER="21"
 
 function clean() {
   echo "cleaning"
-  sudo rm -rf $BIN_DIR
+  rm -rf $BIN_DIR
   rm -rf $CUSTOM_JRE
   rm -rf $DIST_DIR
-  rm -rf $BIN_DIR
 }
 
 function prepare() {
@@ -38,7 +37,7 @@ function deps() {
 
 function create_jre() {
   local jmods="${JAVA_HOME}/jmods"
-  local add_modules="java.base"
+  local add_modules="java.base,java.xml"
   echo "creating custom jre from module path: ${jmods}; add_modules: ${add_modules}"
   jlink --module-path "${jmods}" --add-modules ${add_modules} --no-header-files --no-man-pages --strip-debug --output ${CUSTOM_JRE}
 }
